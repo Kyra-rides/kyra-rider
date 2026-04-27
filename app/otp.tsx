@@ -21,11 +21,9 @@ export default function OtpScreen() {
       Alert.alert('Enter a 6-digit code', 'The code should be 6 digits long.');
       return;
     }
-    Alert.alert('Verified ✓', 'Welcome to Kyra.', [
-      // dismissAll pops every screen on top of the tab home, returning the
-      // user to the welcome screen with verification "complete."
-      { text: 'Continue', onPress: () => router.dismissAll() },
-    ]);
+    // Phone is verified — move on to identity (Aadhaar) verification.
+    // No alert here; the screen change itself confirms success.
+    router.push('/aadhaar');
   };
 
   return (
