@@ -20,16 +20,9 @@ export default function AadhaarScreen() {
       );
       return;
     }
-    Alert.alert(
-      'Aadhaar received ✓',
-      'Selfie verification is the next step (coming soon).',
-      [
-        // dismissAll pops the entire onboarding stack and returns to the
-        // welcome screen. When the selfie screen exists, this becomes
-        // router.push('/selfie') instead.
-        { text: 'Continue', onPress: () => router.dismissAll() },
-      ]
-    );
+    // Aadhaar captured — move on to the selfie face-match step.
+    // No alert here; the screen change itself confirms success.
+    router.push('/selfie');
   };
 
   return (
